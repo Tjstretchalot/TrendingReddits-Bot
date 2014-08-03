@@ -145,18 +145,18 @@ public class TrendingRedditBot {
 						
 						int exponential = 1;
 						while(true) {
-//							try {
+							try {
 								sm.setRestClient(client);
-//								sm.comment(user, text);
+								sm.comment(user, text);
 								logger.info("Succesfully responded");
 								break;
-//							} catch (IOException | ParseException e) {
-//								logger.catching(e);
-//								int timeSeconds = (int) (5 * (Math.pow(2, exponential)));
-//								logger.warn("Retrying in " + timeSeconds + " seconds");
-//								sleepFor(timeSeconds * 1000);
-//								exponential++;
-//							}
+							} catch (IOException | ParseException e) {
+								logger.catching(e);
+								int timeSeconds = (int) (5 * (Math.pow(2, exponential)));
+								logger.warn("Retrying in " + timeSeconds + " seconds");
+								sleepFor(timeSeconds * 1000);
+								exponential++;
+							}
 						}
 					}
 
